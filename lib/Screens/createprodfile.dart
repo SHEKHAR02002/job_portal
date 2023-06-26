@@ -99,9 +99,9 @@ class _CreateProfileState extends State<CreateProfile> {
                     child: Row(
                       children: [
                         Text(
-                          dateofbrith == ""
-                              ? 'Date of Brith'
-                              : dateofbrith.toString(),
+                          dateofbrith != null
+                              ? '${dateofbrith!.day}-${dateofbrith!.month}-${dateofbrith!.year}'
+                              : 'Date of Brith',
                           style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w400),
                         ),

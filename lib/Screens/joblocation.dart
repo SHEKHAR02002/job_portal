@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:job/Data/globaldata.dart';
-import 'package:job/Screens/createprodfile.dart';
 import 'package:job/Theme/colors.dart';
 import 'package:job/Theme/decoration.dart';
 
@@ -136,7 +135,7 @@ class _JobLocationState extends State<JobLocation> {
                       decoration: InputDecoration(
                           prefixIcon: const Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 6),
+                                  horizontal: 10, vertical: 10),
                               child: Icon(CupertinoIcons.search)),
                           enabledBorder: UnderlineInputBorder(
                               borderSide:
@@ -151,7 +150,7 @@ class _JobLocationState extends State<JobLocation> {
                           fillColor: white,
                           hintText: "Enter Nearest Railway/Bus/Autostand",
                           contentPadding:
-                              const EdgeInsets.symmetric(vertical: 12),
+                              const EdgeInsets.symmetric(vertical: 16),
                           helperStyle: const TextStyle(
                               fontSize: 10, color: Colors.grey)),
                     ),
@@ -170,10 +169,7 @@ class _JobLocationState extends State<JobLocation> {
                       setState(() {
                         setctlocation = filterlist[index];
                       });
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const CreateProfile()));
+                      Navigator.popUntil(context, (route) => route.isFirst);
                     },
                     child: ListTile(
                       title: Text(filterlist[index]),

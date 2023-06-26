@@ -1,0 +1,2 @@
+String selectcity = "";
+String setctlocation = "";
